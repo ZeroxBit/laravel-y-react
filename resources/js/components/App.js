@@ -1,18 +1,36 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route,  Switch} from 'react-router-dom'
-import Header from  './Header'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { createStore, compose } from "redux";
+import { Provider } from "react-redux";
+import Header from './Header'
+import Login from '../views/Login';
+import userReducer from '../redux/reducers/userReducer'
+
+
+const store = createStore(
+  userReducer
+);
 
 class App extends Component {
-    render () {
-      return (
-        <BrowserRouter>
-          <div>
-            <Header />
-          </div>
-        </BrowserRouter>
-      )
-    }
-  }
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Login />
+            </Route>
 
-  ReactDOM.render(<App />, document.getElementById('app'))
+            <Route exact path="/header">
+              <Header />
+            </Route>
+
+          </Switch>
+        </Router>
+      </Provider>
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('app'))

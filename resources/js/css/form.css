@@ -1,0 +1,32 @@
+.container-form {
+    padding: 15px;
+    border-radius: 5px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    
+}
+
+.float-container-icon {
+    display: flex;
+    margin-top: -61px;
+}
+
+.icon-circle {
+    background: #00d4ff;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.icon-login {
+    font-size: 60px;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
