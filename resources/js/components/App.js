@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { createStore, compose } from "redux";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
 import Header from './Header'
 import Login from '../views/Login';
@@ -16,6 +16,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        {/* Aqui pones el header global */}
         <Router>
           <Switch>
             <Route exact path="/">
